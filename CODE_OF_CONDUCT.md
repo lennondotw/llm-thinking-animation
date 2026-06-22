@@ -2,30 +2,15 @@
 
 ## Tech Stack
 
-This project uses the following tech stack:
-
-- typescript 5.8
-- tailwindcss 4
-- pnpm 10.5.2
-- eslint 9
-- cspell
-- vite 6.3.3
-- vitest 3.1.2
+TypeScript, Tailwind CSS, Vite, Vitest, ESLint, cspell, pnpm.
 
 ## TypeScript
 
-This project uses the following TypeScript strict configurations:
-
-- `strict: true`
-- `useUnknownInCatchVariables: true`
-- `noUncheckedIndexedAccess: true`
-
-- Ensure code type safety, avoid using `any` and `as`, use `unknown` and `never` instead when needed
+Run in strict mode with `useUnknownInCatchVariables` and `noUncheckedIndexedAccess` enabled. Keep the code type-safe: avoid `any` and `as`; reach for `unknown` or `never` instead.
 
 ## React Components
 
-- All React components must use `FC` type annotation
-- Avoid using default export, use named export instead if not necessary
+Annotate components with `FC`, and prefer named exports over default exports.
 
 ```tsx
 import { FC } from 'react';
@@ -35,17 +20,16 @@ export const Component: FC<Props> = ({ prop }) => {
 };
 ```
 
-## Import
+## Imports
 
-- Use `#src/` alias to import project internal modules. It's defined in package.json imports field.
-- Use `import type` syntax to import types
+Use the `#src/` alias (defined in the `imports` field of `package.json`) for internal modules, and `import type` for types.
 
 ```tsx
 import type { ButtonProps } from '#src/components/ui/button';
 import { cn } from '#src/utils/component';
 ```
 
-When importing files, use the shortest path, do not use `/index` or `/index.ts` suffix, corresponding to VSCode configuration
+Use the shortest specifier — drop any `/index` or `/index.ts` suffix. This matches the VSCode setting:
 
 ```json
 {
@@ -55,22 +39,18 @@ When importing files, use the shortest path, do not use `/index` or `/index.ts` 
 
 ## Tests
 
-This project uses Vitest for testing. You can run `pnpm test` to run all tests, or `pnpm test:watch` to run tests in watch mode.
+Run `pnpm test` for a single pass or `pnpm test:watch` while developing. Write tests for important components and functions, and place them in an `__tests__` directory next to the implementation.
 
-Always write tests for important components and functions. Put tests in the `__tests__` directory corresponding to the implementation file.
-
-### CSpell Spell Check
-
-If you encounter CSpell warnings, you can add specific terms to the `cspell.config.yaml` file in the project root
+For cspell warnings, add the term to `cspell.config.yaml`:
 
 ```yaml
 words:
   - apple
 ```
 
-## Git Commit Message
+## Git Commit Messages
 
-The commit message should clearly describe the changes, and be written in English. Except for professional terms, the first letter of the sentence does not need to be capitalized.
+Write commit messages in English. They should clearly describe the change. Outside of proper nouns, the first word is lowercase.
 
 ```plaintext
 feat: ✨ add new feature
@@ -78,22 +58,14 @@ chore: 📦 update dependencies
 fix: 🐛 something is not working
 ```
 
-## Guidelines
-
-- Ensure compatibility with Android, iOS, Windows, macOS, Linux, etc.
-- Ensure compatibility with Chrome, Safari, Firefox, etc.
-- Ensure compliance with WCAG, A11y, etc.
-- Do not overly consider compatibility issues with old browsers
-
 ## File Naming
 
-Use kebab-case to name files, for example `responsive-tabs.tsx`.
+Use kebab-case, e.g. `responsive-tabs.tsx`.
 
 ## Comments
 
-Comments are written in English. DO NOT write too many comments, prefer to write code that is self-explanatory.
+Write comments in English, and keep them sparse — prefer self-explanatory code over narration.
 
-## Language
+## Compatibility
 
-- Always use English for comments, code, and documentation.
-- Use other languages for communication if needed.
+Target current browsers (Chrome, Safari, Firefox) and platforms (Android, iOS, Windows, macOS, Linux). Follow WCAG and a11y practices. Don't go out of the way to support legacy browsers.
