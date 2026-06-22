@@ -2,7 +2,7 @@
 
 A ChatGPT-o3-like LLM thinking animation demo showcasing advanced React animation techniques with Motion (Framer Motion's successor). This implementation demonstrates sophisticated layout animation patterns, declarative API design, and performance optimization strategies.
 
-🔗 **[Live Demo](https://reekystive.github.io/llm-thinking-animation/)**
+🔗 **[Live Demo](https://lennondotw.github.io/llm-thinking-animation/)**
 
 ## 🎯 Overview
 

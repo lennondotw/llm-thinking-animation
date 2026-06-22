@@ -8,12 +8,12 @@ export const Signature: FC<{ className?: string }> = ({ className }) => {
       <span> ❤️ </span>
       <span> by </span>
       <a
-        href="https://github.com/reekystive"
+        href="https://github.com/lennondotw/llm-thinking-animation"
         target="_blank"
         rel="noopener noreferrer"
         className="text-red-500 dark:text-red-300"
       >
-        @reekystive
+        @lennondotw
       </a>
       <span>.</span>
     </div>
